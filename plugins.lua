@@ -34,12 +34,19 @@ local plugins = {
   },
 
   {
+    "lewis6991/gitsigns.nvim",
+    opts = overrides.gitsigns,
+  },
+
+  {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
   },
 
   {
-    'Civitasv/cmake-tools.nvim',
+    "Civitasv/cmake-tools.nvim",
+    lazy = false,
+    opts = overrides.cmaketools,
   },
 
   {
