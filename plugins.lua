@@ -6,8 +6,10 @@ local plugins = {
   -- Override plugin definition options
   {
     "kylechui/nvim-surround", -- Surround
+    lazy = false,
     config = function()
-      require("custom.configs.nvim-surround")
+      require("nvim-surround").setup({
+      })
     end
   },
 
