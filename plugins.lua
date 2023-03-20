@@ -4,6 +4,11 @@ local overrides = require("custom.configs.overrides")
 local plugins = {
 
   {
+    "windwp/nvim-spectre",
+    opts = overrides.nvimspectre,
+  },
+
+  {
     "ggandor/leap.nvim",
     keys = {
       { "s", mode = { "n", "x", "o" }, desc = "Leap forward to" },

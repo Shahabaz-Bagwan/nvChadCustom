@@ -10,6 +10,12 @@ M.general = {
   }
 }
 
+M.nvimspectre = {
+ n = {
+      [ "<leader>sr" ] = {'<cmd>lua require("spectre").open()<CR>' , "Replace in files (Spectre)" },
+    },
+}
+
 M.nvimtree = {
    n = {
     -- toggle
