@@ -2,6 +2,10 @@ local overrides = require("custom.configs.overrides")
 
 ---@type NvPluginSpec[]
 local plugins = {
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  },
 
   {
     "windwp/nvim-spectre",
@@ -28,14 +32,14 @@ local plugins = {
 
   {
     "ggandor/flit.nvim",
-    keys = function()
-      ---@type LazyKeys[]
-      local ret = {}
-      for _, key in ipairs({ "f", "F", "t", "T" }) do
-        ret[#ret + 1] = { key, mode = { "n", "x", "o" }, desc = key }
-      end
-      return ret
-    end,
+     -- keys = function()
+     --   ---@type LazyKeys[]
+     --   local ret = {}
+     --   for _, key in ipairs({ "f", "F", "t", "T" }) do
+     --     ret[#ret + 1] = { key, mode = { "n", "x", "o" }, desc = key }
+     --   end
+     --   return ret
+     -- end,
     opts = { labeled_modes = "nx" },
   },
 
@@ -48,6 +52,16 @@ local plugins = {
       require("nvim-surround").setup({
       })
     end
+  },
+
+  {
+    "p00f/clangd_extensions.nvim", -- clangd extension, some good stuff
+    opts = overrides.clangd_extensions
+  },
+
+  {
+    "simrat39/rust-tools.nvim", -- rust, rust, it's rust!
+    opts = overrides.rust_tools
   },
 
   {
@@ -90,7 +104,7 @@ local plugins = {
 
   {
     "Civitasv/cmake-tools.nvim",
-    lazy = false,
+    lazy = true,
     opts = overrides.cmaketools,
   },
 

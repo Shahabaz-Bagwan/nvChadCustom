@@ -18,7 +18,7 @@ M.cmaketools = {
 
 M.treesitter = {
   ensure_installed = {
-    "help",
+    "vimdoc",
     "lua",
     "cpp",
     "c",
@@ -26,6 +26,7 @@ M.treesitter = {
     "vim",
     "python",
     "markdown",
+    "bash",
     "markdown_inline",
   },
   indent = {
@@ -77,6 +78,7 @@ M.nvimtree = {
     ignore = false,
   },
   renderer = {
+    root_folder_label = false,
     icons = {
       show = {
         git = true,
@@ -87,15 +89,31 @@ M.nvimtree = {
 
 M.mason = {
   ensure_installed = {
-    -- lua stuff
-    "lua-language-server",
+    "luacheck",
+    "luaformat",
+    "shfmt",
+    "rustfmt",
+    "cmakelint",
+    "grammarly-languageserver",
+    "dockerfile-language-server",
+    "codelldb",
+    "texlab",
     "stylua",
-
-    -- web dev stuff
-    "clangd",
+    "xmlformatter",
+    "pyright",
+    "pylint",
+    "lua-language-server",
+    "ltex-ls",
+    "json-lsp",
+    "gitui",
+    "fixjson",
+    "cpptools",
+    "cpplint",
+    "cmake-language-server",
+    "cmakelang",
     "clang-format",
+    "clangd",
     "rust-analyzer",
-
   },
 }
 

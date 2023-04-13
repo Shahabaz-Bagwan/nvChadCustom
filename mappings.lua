@@ -3,9 +3,11 @@ local M = {}
 M.general = {
   n = {
     [";"] = { ":", "enter cmdline", opts = { nowait = true } },
+    ["<Space>"] = { "<Nop>", "", opts = { nowait = true } },
     ["<Esc>"] = { ":noh <CR>", "clear highlights", opts = { silent = true } },
   },
   v = {
+    ["<Space>"] = { "<Nop>", "", opts = { nowait = true } },
     [";"] = { ":", "enter cmdline", opts = { nowait = true } },
   }
 }
@@ -28,11 +30,11 @@ M.nvimtree = {
 
 M.cmaketools = {
   n = {
-    ["<leader>cg"] = { "<cmd>CMakeGenerate<CR>",  "Generate" },
+    ["<leader>cg"] = { "<cmd>CMakeGenerate<CR>",  "Cmake Generate" },
     ["<leader>cx"] = { "<cmd>CMakeGenerate!<CR>",  "Clean and generate" },
-    ["<leader>cb"] = { "<cmd>CMakeBuild<CR>",  "Build" },
-    ["<leader>cr"] = { "<cmd>CMakeRun<CR>",  "Run" },
-    ["<leader>cd"] = { "<cmd>CMakeDebug<CR>",  "Debug" },
+    ["<leader>cb"] = { "<cmd>CMakeBuild<CR>",  "Cmake Build" },
+    ["<leader>cr"] = { "<cmd>CMakeRun<CR>",  "cmake Run" },
+    ["<leader>cd"] = { "<cmd>CMakeDebug<CR>",  "cmake Debug" },
     ["<leader>cy"] = { "<cmd>CMakeSelectBuildType<CR>",  "Select Build Type" },
     ["<leader>ct"] = { "<cmd>CMakeSelectBuildTarget<CR>",  "Select Build Target" },
     ["<leader>cl"] = { "<cmd>CMakeSelectLaunchTarget<CR>",  "Select Launch Target" },
