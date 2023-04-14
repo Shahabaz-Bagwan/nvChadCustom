@@ -108,11 +108,6 @@ local plugins = {
     ft = { "c", "cpp" },
     opts = overrides.cmaketools,
   },
-
-  {
-    "folke/which-key.nvim",
-    enabled = true,
-  },
 }
 
 return plugins

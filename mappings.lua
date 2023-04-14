@@ -3,11 +3,9 @@ local M = {}
 M.general = {
   n = {
     [";"] = { ":", "enter cmdline", opts = { nowait = true } },
-    ["<Space>"] = { "<Nop>", "", opts = { nowait = true } },
     ["<Esc>"] = { ":noh <CR>", "clear highlights", opts = { silent = true } },
   },
   v = {
-    ["<Space>"] = { "<Nop>", "", opts = { nowait = true } },
     [";"] = { ":", "enter cmdline", opts = { nowait = true } },
   },
 }
