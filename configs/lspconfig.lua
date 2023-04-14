@@ -6,16 +6,15 @@ local lspconfig = require "lspconfig"
 -- if you just want default config for the servers then put them in a table
 local servers = {
   "clangd",
-  "stylua",
-  "grammarly-languageserver",
-  "dockerfile-language-server",
+  "lua_ls",
+  "grammarly",
+  "dockerls",
   "texlab",
   "pyright",
-  "lua-language-server",
-  "ltex-ls",
-  "json-lsp",
-  "cmake-language-server",
-  "rust-analyzer",
+  "ltex",
+  "jsonls",
+  "cmake",
+  "rust_analyzer",
 }
 
 for _, lsp in ipairs(servers) do

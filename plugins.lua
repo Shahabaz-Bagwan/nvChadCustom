@@ -1,10 +1,11 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
   {
     "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+    lazy = false,
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
   },
 
   {
@@ -20,7 +21,7 @@ local plugins = {
       { "gs", mode = { "n", "x", "o" }, desc = "Leap from windows" },
     },
     config = function(_, opts)
-      local leap = require("leap")
+      local leap = require "leap"
       for k, v in pairs(opts) do
         leap.opts[k] = v
       end
@@ -32,36 +33,36 @@ local plugins = {
 
   {
     "ggandor/flit.nvim",
-     -- keys = function()
-     --   ---@type LazyKeys[]
-     --   local ret = {}
-     --   for _, key in ipairs({ "f", "F", "t", "T" }) do
-     --     ret[#ret + 1] = { key, mode = { "n", "x", "o" }, desc = key }
-     --   end
-     --   return ret
-     -- end,
+    keys = function()
+      ---@type LazyKeys[]
+      local ret = {}
+      for _, key in ipairs { "f", "F", "t", "T" } do
+        ret[#ret + 1] = { key, mode = { "n", "x", "o" }, desc = key }
+      end
+      return ret
+    end,
     opts = { labeled_modes = "nx" },
   },
-
 
   -- Override plugin definition options
   {
     "kylechui/nvim-surround", -- Surround
     lazy = false,
     config = function()
-      require("nvim-surround").setup({
-      })
-    end
+      require("nvim-surround").setup {}
+    end,
   },
 
   {
     "p00f/clangd_extensions.nvim", -- clangd extension, some good stuff
-    opts = overrides.clangd_extensions
+    ft = { "c", "cpp" },
+    opts = overrides.clangd_extensions,
   },
 
   {
     "simrat39/rust-tools.nvim", -- rust, rust, it's rust!
-    opts = overrides.rust_tools
+    ft = { "rust" },
+    opts = overrides.rust_tools,
   },
 
   {
@@ -84,7 +85,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -104,7 +105,7 @@ local plugins = {
 
   {
     "Civitasv/cmake-tools.nvim",
-    lazy = true,
+    ft = { "c", "cpp" },
     opts = overrides.cmaketools,
   },
 

@@ -87,6 +87,11 @@ M.nvimtree = {
   },
 }
 
+M.telescope = {
+  -- extensions_list = { "file_browser" },
+  -- require("telescope").load_extension "file_browser",
+}
+
 M.mason = {
   ensure_installed = {
     "luacheck",
