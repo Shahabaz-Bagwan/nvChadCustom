@@ -1,9 +1,6 @@
 local M = {}
 
 M.general = {
-  i = {
-    ["<leader>ww"] = { "<Esc> <cmd> write <CR>", "write file", opts = { nowait = true } },
-  },
   n = {
     ["<leader>ww"] = { "<Esc> <cmd> write <CR>", "write file", opts = { nowait = true } },
     ["<F5>"] = { "<cmd> !python3 % <CR>", "run python file", opts = { nowait = true } },
