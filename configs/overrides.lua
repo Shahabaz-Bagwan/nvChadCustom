@@ -5,14 +5,14 @@ M.cmaketools = {
   cmake_build_directory = "build",
   cmake_build_directory_prefix = "", -- when cmake_build_directory is "", this option will be activated
   cmake_generate_options = { "-D", "CMAKE_EXPORT_COMPILE_COMMANDS=1" },
-  cmake_build_options = {"--parallel"},
+  cmake_build_options = { "--parallel" },
   cmake_console_size = 10, -- cmake output window height
   cmake_console_position = "belowright", -- "belowright", "aboveleft", ...
   cmake_show_console = "always", -- "always", "only_on_error"
   cmake_dap_configuration = { name = "cpp", type = "codelldb", request = "launch" }, -- dap configuration, optional
   cmake_variants_message = {
     short = { show = true },
-    long = { show = true, max_length = 40 }
+    long = { show = true, max_length = 40 },
   },
 }
 
@@ -32,7 +32,7 @@ M.treesitter = {
   indent = {
     enable = true,
     disable = {
-      "python"
+      "python",
     },
   },
 }
@@ -88,8 +88,30 @@ M.nvimtree = {
 }
 
 M.telescope = {
-  -- extensions_list = { "file_browser" },
-  -- require("telescope").load_extension "file_browser",
+  -- extensions = {
+  --   ["ui-select"] = {
+  --     require("telescope.themes").get_dropdown {
+  --       -- even more opts
+  --       width = 0.8,
+  --       previewer = false,
+  --       prompt_title = false,
+  --       borderchars = {
+  --         { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+  --         prompt = { "─", "│", " ", "│", "┌", "┐", "│", "│" },
+  --         results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
+  --         preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+  --       },
+  --     },
+  --   },
+  --   ["fzf"] = {
+  --     fuzzy = true, -- false will only do exact matching
+  --     override_generic_sorter = true, -- override the generic sorter
+  --     override_file_sorter = true, -- override the file sorter
+  --     case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+  --     -- the default case_mode is "smart_case"
+  --   },
+  -- },
+  -- extensions_list = { "file_browser", "ui-select", "fzf" },
 }
 
 M.mason = {

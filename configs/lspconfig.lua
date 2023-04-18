@@ -39,33 +39,32 @@ lspconfig.clangd.setup {
     },
     root_dir = {
       root_pattern = {
-        '.clangd',
-        '.clang-tidy',
-        '.clang-format',
-        'compile_commands.json',
-        'compile_flags.txt',
-        'configure.ac',
-        '.git'
+        ".clangd",
+        ".clang-tidy",
+        ".clang-format",
+        "compile_commands.json",
+        "compile_flags.txt",
+        "configure.ac",
+        ".git",
       },
     },
 
     filetypes = {
-     "c",
-     "cpp",
-     "objc",
-     "objcpp",
-     "cuda",
-     "proto"
+      "c",
+      "cpp",
+      "objc",
+      "objcpp",
+      "cuda",
+      "proto",
     },
     single_file_support = true,
     init_options = {
-    usePlaceholders = true,
-    completeUnimported = true,
-    clangdFileStatus = true
+      usePlaceholders = true,
+      completeUnimported = true,
+      clangdFileStatus = true,
     },
-    flags = { debounce_text_changes = 150 }
-  }
-
+    flags = { debounce_text_changes = 150 },
+  },
 }
 
 lspconfig.rust_analyzer.setup {
@@ -77,19 +76,20 @@ lspconfig.rust_analyzer.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
-    cmd = {"rust-analyzer" },
+    cmd = { "rust-analyzer" },
     ["rust-analyzer"] = {
       cargo = {
-        autoReload = true
-      }
+        autoReload = true,
+      },
     },
     filetypes = { "rust" },
     root_dir = {
       root_pattern = {
-        "Cargo.toml", "rust-project.json"
-      }
-    }
-  }
+        "Cargo.toml",
+        "rust-project.json",
+      },
+    },
+  },
 }
 
 lspconfig.lua_ls.setup {
@@ -105,7 +105,7 @@ lspconfig.lua_ls.setup {
           indent_style = "space",
           indent_size = "2",
           quote_style = "double",
-          max_line_length = "unset"
+          max_line_length = "unset",
         },
       },
     },

@@ -1,4 +1,4 @@
-local clangd_extensions = require("clangd_extensions")
+local clangd_extensions = require "clangd_extensions"
 clangd_extensions.setup {
   extensions = {
     -- defaults:
@@ -36,21 +36,21 @@ clangd_extensions.setup {
     ast = {
       -- These are unicode, should be available in any font
       role_icons = {
-           type = "🄣",
-           declaration = "🄓",
-           expression = "🄔",
-           statement = ";",
-           specifier = "🄢",
-           ["template argument"] = "🆃",
+        type = "🄣",
+        declaration = "🄓",
+        expression = "🄔",
+        statement = ";",
+        specifier = "🄢",
+        ["template argument"] = "🆃",
       },
       kind_icons = {
-          Compound = "🄲",
-          Recovery = "🅁",
-          TranslationUnit = "🅄",
-          PackExpansion = "🄿",
-          TemplateTypeParm = "🅃",
-          TemplateTemplateParm = "🅃",
-          TemplateParamObject = "🅃",
+        Compound = "🄲",
+        Recovery = "🅁",
+        TranslationUnit = "🅄",
+        PackExpansion = "🄿",
+        TemplateTypeParm = "🅃",
+        TemplateTemplateParm = "🅃",
+        TemplateParamObject = "🅃",
       },
       --[[ These require codicons (https://github.com/microsoft/vscode-codicons)
       role_icons = {
@@ -73,7 +73,7 @@ clangd_extensions.setup {
       }, ]]
 
       highlights = {
-          detail = "Comment",
+        detail = "Comment",
       },
     },
     memory_usage = {

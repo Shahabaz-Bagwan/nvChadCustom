@@ -2,6 +2,15 @@ local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
+  -- Fuzzy Finder Algorithm which requires local dependencies to be built.
+  -- Only load if `make` is available
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = "make",
+    cond = vim.fn.executable "make" == 1,
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+  },
+
   {
     "nvim-telescope/telescope-file-browser.nvim",
     lazy = false,
@@ -9,8 +18,8 @@ local plugins = {
   },
 
   {
-    "windwp/nvim-spectre",
-    opts = overrides.nvimspectre,
+    "nvim-telescope/telescope-ui-select.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
   },
 
   {

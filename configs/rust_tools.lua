@@ -173,4 +173,4 @@ local opts = {
   },
 }
 
-require('rust-tools').setup(opts)
+require("rust-tools").setup(opts)

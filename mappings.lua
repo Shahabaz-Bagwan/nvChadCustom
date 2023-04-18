@@ -10,12 +10,6 @@ M.general = {
   },
 }
 
-M.nvimspectre = {
-  n = {
-    ["<leader>sr"] = { '<cmd> lua require("spectre").open() <CR>', "Replace in files (Spectre)" },
-  },
-}
-
 M.nvimtree = {
   n = {
     -- toggle
@@ -50,6 +44,10 @@ M.telescope = {
     ["<leader>ff"] = {
       "<cmd> Telescope file_browser path=%:p:h select_buffer=true <CR>",
       "open file browser",
+    },
+    ["<leader>fk"] = {
+      "<cmd> Telescope keymaps <CR>",
+      "show keymaps",
     },
   },
 }
