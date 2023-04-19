@@ -114,7 +114,7 @@ local plugins = {
 
   {
     "Civitasv/cmake-tools.nvim",
-    ft = { "c", "cpp" },
+    lazy = false,
     opts = overrides.cmaketools,
   },
 }

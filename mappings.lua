@@ -51,6 +51,9 @@ M.telescope = {
       "<cmd> Telescope keymaps <CR>",
       "show keymaps",
     },
+    ["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "git commits" },
+    ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "git status" },
+    ["<leader>gt"] = { "<Nop>" },
   },
 }
 
