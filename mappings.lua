@@ -2,7 +2,8 @@ local M = {}
 
 M.general = {
   n = {
-    ["<leader>ww"] = { "<Esc> <cmd> write <CR>", "write file", opts = { nowait = true } },
+    ["<leader>fmt"] = { "<cmd>%s/></>\r</g<CR> <bar> gg=G"},
+    ["<F3>"] = { "<cmd> set list! <CR>", "toggle list", opts = { nowait = true } },
     ["<F5>"] = { "<cmd> !python3 % <CR>", "run python file", opts = { nowait = true } },
     [";"] = { ":", "enter cmdline", opts = { nowait = true } },
     ["<Esc>"] = { "<cmd> noh <CR>", "clear highlights", opts = { silent = true } },

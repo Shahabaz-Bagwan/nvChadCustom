@@ -28,6 +28,7 @@ M.treesitter = {
     "markdown",
     "bash",
     "markdown_inline",
+    "jsonc",
   },
   indent = {
     enable = true,
@@ -73,6 +74,7 @@ M.gitsigns = {
 }
 
 M.nvimtree = {
+  disable_netrw = false,
   git = {
     enable = true,
     ignore = false,
