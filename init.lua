@@ -8,7 +8,6 @@ vim.o.scrolloff = 8
 vim.opt.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣"
 vim.opt.swapfile = false
 vim.opt.undofile = false
-vim.opt.spell = true
 vim.opt.spelllang= "en_us,de_de"
 vim.opt.cursorlineopt = "line"
 vim.opt.foldenable = false

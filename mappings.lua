@@ -2,14 +2,16 @@ local M = {}
 
 M.general = {
   n = {
-    ["<leader>fmt"] = { "<cmd>%s/></>\r</g<CR> <bar> gg=G"},
-    ["<F3>"] = { "<cmd> set list! <CR>", "toggle list", opts = { nowait = true } },
-    ["<F5>"] = { "<cmd> !python3 % <CR>", "run python file", opts = { nowait = true } },
-    [";"] = { ":", "enter cmdline", opts = { nowait = true } },
-    ["<Esc>"] = { "<cmd> noh <CR>", "clear highlights", opts = { silent = true } },
+    ["<leader>ft"] = { "<cmd> %s/</\r</g <CR> <bar> gg=G", "Format xml" },
+    ["<leader>sp"] = { "<cmd> set spell! <CR>", "Toggle spell check"},
+    ["<leader>wp"] = { "<cmd> set wrap! <CR>", "Toggle line wrap" },
+    ["<F3>"] = { "<cmd> set list! <CR>", "Toggle list", opts = { nowait = true } },
+    ["<F5>"] = { "<cmd> !python3 % <CR>", "Run python file", opts = { nowait = true } },
+    [";"] = { ":", "Enter cmdline", opts = { nowait = true } },
+    ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights", opts = { silent = true } },
   },
   v = {
-    [";"] = { ":", "enter cmdline", opts = { nowait = true } },
+    [";"] = { ":", "Enter cmdline", opts = { nowait = true } },
   },
 }
 
