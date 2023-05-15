@@ -13,17 +13,19 @@ local sources = {
 
   -- cpp
   b.formatting.clang_format,
+  b.diagnostics.cpplint,
 
   --cmake
   b.formatting.cmake_format,
-  b.diagnostic.cmake_lint,
+  b.diagnostics.cmake_lint,
 
   --markdown
   b.formatting.markdownlint,
-  b.diagnostic.markdownlint,
+  b.diagnostics.markdownlint,
 
   --json
   b.formatting.fixjson,
+  b.diagnostics.jsonlint,
 
   --xml
   b.formatting.xmlformat,
