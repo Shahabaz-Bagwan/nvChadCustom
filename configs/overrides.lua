@@ -102,30 +102,16 @@ M.nvimtree = {
 }
 
 M.telescope = {
-  -- extensions = {
-  --   ["ui-select"] = {
-  --     require("telescope.themes").get_dropdown {
-  --       -- even more opts
-  --       width = 0.8,
-  --       previewer = false,
-  --       prompt_title = false,
-  --       borderchars = {
-  --         { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-  --         prompt = { "─", "│", " ", "│", "┌", "┐", "│", "│" },
-  --         results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
-  --         preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-  --       },
-  --     },
-  --   },
-  --   ["fzf"] = {
-  --     fuzzy = true, -- false will only do exact matching
-  --     override_generic_sorter = true, -- override the generic sorter
-  --     override_file_sorter = true, -- override the file sorter
-  --     case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-  --     -- the default case_mode is "smart_case"
-  --   },
-  -- },
-  -- extensions_list = { "file_browser", "ui-select", "fzf" },
+  extensions = {
+    ["fzf"] = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true, -- override the file sorter
+      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+      -- the default case_mode is "smart_case"
+    },
+  },
+  extensions_list = { "file_browser", "fzf" },
 }
 
 M.mason = {
