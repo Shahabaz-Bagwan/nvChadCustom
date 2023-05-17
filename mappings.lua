@@ -44,12 +44,56 @@ M.cmaketools = {
   },
 }
 
+M.lspconfig = {
+  n = {
+
+    ["gd"] = { "<cmd>Telescope lsp_definitions<cr>", "Goto Definition" },
+    ["gr"] = { "<cmd>Telescope lsp_references<cr>", "References" },
+    ["gD"] = { "vim.lsp.buf.declaration", "Goto Declaration" },
+    ["gi"] = { "<cmd>Telescope lsp_implementations<cr>", "Goto Implementation" },
+    ["<leader>D"] = { "<cmd>Telescope lsp_type_definitions<cr>", "Goto Type Definition" },
+    ["<leader>ss"] = {
+      "<cmd>Telescope lsp_document_symbols{ symbols = { 'Class', 'Function', \
+      'Method', 'Constructor', 'Interface', 'Module', 'Struct', 'Trait', 'Field', 'Property', }, }",
+      "Goto Symbol",
+    },
+
+    ["<leader>q"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics (Trouble)" },
+    ["<leader>Q"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics (Trouble)" },
+    ["<leader>l"] = { "<cmd>TroubleToggle loclist<cr>", "Location List (Trouble)" },
+    ["<leader>L"] = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix List (Trouble)" },
+
+    ["[d"] = {
+      function()
+        if require("trouble").is_open() then
+          require("trouble").previous { skip_groups = true, jump = true }
+        else
+          vim.cmd.cprev()
+        end
+      end,
+      "Previous trouble/quickfix item",
+    },
+
+    ["]d"] = {
+      function()
+        if require("trouble").is_open() then
+          require("trouble").next { skip_groups = true, jump = true }
+        else
+          vim.cmd.cnext()
+        end
+      end,
+      "Next trouble/quickfix item",
+    },
+  },
+}
+
 M.telescope = {
   n = {
     ["<leader>ff"] = {
       "<cmd> Telescope file_browser path=%:p:h select_buffer=true <CR>",
       "open file browser",
     },
+
     ["<leader>fk"] = {
       "<cmd> Telescope keymaps <CR>",
       "show keymaps",
