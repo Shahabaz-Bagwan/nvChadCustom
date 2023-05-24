@@ -35,8 +35,6 @@ local plugins = {
 
   { "tpope/vim-repeat", event = "VeryLazy" },
 
-  { "tpope/vim-repeat", event = "VeryLazy" },
-
   {
     "folke/persistence.nvim",
     event = "BufReadPre",
@@ -64,14 +62,6 @@ local plugins = {
         desc = "Don't Save Current Session",
       },
     },
-  },
-
-  {
-    "hrsh7th/nvim-cmp",
-    config = function()
-      require "plugins.configs.cmp"
-      require "custom.configs.cmp"
-    end, -- Override to setup mason-lspconfig
   },
 
   {
@@ -148,15 +138,16 @@ local plugins = {
   {
     "p00f/clangd_extensions.nvim", -- clangd extension, some good stuff
     ft = { "c", "cpp" },
-    opts = overrides.clangd_extensions,
-    -- config = function()
-    --   require "custom.configs.clangd_extensions"
-    -- end,
+    -- opts = overrides.clangd_extensions,
+    config = function()
+      require "custom.configs.clangd_extensions"
+    end,
   },
 
   {
     "simrat39/rust-tools.nvim", -- rust, rust, it's rust!
     ft = { "rust" },
+    opts = overrides.rust_tools,
     config = function()
       require "custom.configs.rust_tools"
     end,
