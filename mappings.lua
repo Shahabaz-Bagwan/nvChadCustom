@@ -6,7 +6,7 @@ M.general = {
     ["<leader>sp"] = { "<cmd> set spell! <CR>", "Toggle spell check" },
     ["<leader>wp"] = { "<cmd> set wrap! <CR>", "Toggle line wrap" },
     ["<leader>ww"] = { "<cmd> write <CR>", "Write/Save file" },
-    ["<leader>sq"] = { "<cmd> quit <CR>", "Session quit" },
+    ["<leader>sq"] = { "<cmd> quitall <CR>", "Session quit" },
     ["<F3>"] = { "<cmd> set list! <CR>", "Toggle list", opts = { nowait = true } },
     ["<F5>"] = { "<cmd> !python3 % <CR>", "Run python file", opts = { nowait = true } },
     [";"] = { ":", "Enter cmdline", opts = { nowait = true } },
@@ -15,6 +15,7 @@ M.general = {
   v = {
     [";"] = { ":", "Enter cmdline", opts = { nowait = true } },
     ["<leader>ww"] = { "<cmd> write <CR>", "Write/Save file" },
+    ["<leader>sq"] = { "<cmd> quitall<CR>", "Session quit" },
   },
 }
 
@@ -59,33 +60,6 @@ M.lspconfig = {
       "<cmd>Telescope lsp_document_symbols{ symbols = { 'Class', 'Function', \
       'Method', 'Constructor', 'Interface', 'Module', 'Struct', 'Trait', 'Field', 'Property', }, }",
       "Goto Symbol",
-    },
-
-    ["<leader>q"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics (Trouble)" },
-    ["<leader>Q"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics (Trouble)" },
-    ["<leader>l"] = { "<cmd>TroubleToggle loclist<cr>", "Location List (Trouble)" },
-    ["<leader>L"] = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix List (Trouble)" },
-
-    ["[d"] = {
-      function()
-        if require("trouble").is_open() then
-          require("trouble").previous { skip_groups = true, jump = true }
-        else
-          vim.cmd.cprev()
-        end
-      end,
-      "Previous trouble/quickfix item",
-    },
-
-    ["]d"] = {
-      function()
-        if require("trouble").is_open() then
-          require("trouble").next { skip_groups = true, jump = true }
-        else
-          vim.cmd.cnext()
-        end
-      end,
-      "Next trouble/quickfix item",
     },
   },
 }
