@@ -36,35 +36,6 @@ local plugins = {
   { "tpope/vim-repeat", event = "VeryLazy" },
 
   {
-    "folke/persistence.nvim",
-    event = "BufReadPre",
-    opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help", "globals" } },
-    keys = {
-      {
-        "<leader>rs",
-        function()
-          require("persistence").load()
-        end,
-        desc = "Restore Session",
-      },
-      {
-        "<leader>rls",
-        function()
-          require("persistence").load { last = true }
-        end,
-        desc = "Restore Last Session",
-      },
-      {
-        "<leader>ds",
-        function()
-          require("persistence").stop()
-        end,
-        desc = "Don't Save Current Session",
-      },
-    },
-  },
-
-  {
     "RRethy/vim-illuminate",
     event = { "BufReadPost", "BufNewFile" },
     opts = { delay = 200 },
@@ -139,18 +110,18 @@ local plugins = {
     "p00f/clangd_extensions.nvim", -- clangd extension, some good stuff
     ft = { "c", "cpp" },
     -- opts = overrides.clangd_extensions,
-    config = function()
-      require "custom.configs.clangd_extensions"
-    end,
+    -- config = function()
+    --   require "custom.configs.clangd_extensions"
+    -- end,
   },
 
   {
     "simrat39/rust-tools.nvim", -- rust, rust, it's rust!
     ft = { "rust" },
-    opts = overrides.rust_tools,
-    config = function()
-      require "custom.configs.rust_tools"
-    end,
+    -- opts = overrides.rust_tools,
+    -- config = function()
+    --   require "custom.configs.rust_tools"
+    -- end,
   },
 
   {

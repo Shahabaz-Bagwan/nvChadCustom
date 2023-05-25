@@ -5,14 +5,14 @@
 local M = {}
 
 ---@type Base46HLGroupsList
-M.override = {
-  CursorLine = {
-    bg = "black2",
-  },
-  Comment = {
-    italic = true,
-  },
-}
+-- M.override = {
+--   CursorLine = {
+--     guibg = "#ffffff",
+--   },
+--   Comment = {
+--     italic = true,
+--   },
+-- }
 
 ---@type HLTable
 M.add = {

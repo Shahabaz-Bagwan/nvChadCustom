@@ -9,6 +9,13 @@ M.base46 = {
 
 M.ui = {
   theme = "chadracula",
+  -- hl_override = {
+  --   hl_groups = {
+  --     CursorLine = {
+  --       guibg = "white",
+  --     },
+  --   },
+  -- },
   transparency = true,
   statusline = {
     -- theme = "default", -- default/vscode/vscode_colored/minimal
