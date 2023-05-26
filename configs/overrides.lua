@@ -99,7 +99,7 @@ M.telescope = {
       -- the default case_mode is "smart_case"
     },
   },
-  extensions_list = { "file_browser", "fzf" },
+  extensions_list = { "fzf" },
 }
 
 M.mason = {

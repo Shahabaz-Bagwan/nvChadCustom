@@ -66,11 +66,6 @@ M.lspconfig = {
 
 M.telescope = {
   n = {
-    ["<leader>ff"] = {
-      "<cmd> Telescope file_browser path=%:p:h select_buffer=true <CR>",
-      "open file browser",
-    },
-
     ["<leader>fk"] = {
       "<cmd> Telescope keymaps <CR>",
       "show keymaps",
