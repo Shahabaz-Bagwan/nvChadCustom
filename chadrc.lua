@@ -7,15 +7,15 @@ M.base46 = {
   extended_integrations = { "notify", "dap" }, -- these aren't compiled by default, ex: "alpha", "notify"
 }
 
+-- Path to overriding theme and highlights files
+local highlights = require "custom.highlights"
+
 M.ui = {
   theme = "chadracula",
-  -- hl_override = {
-  --   hl_groups = {
-  --     CursorLine = {
-  --       guibg = "white",
-  --     },
-  --   },
-  -- },
+
+  hl_override = highlights.override,
+  hl_add = highlights.add,
+
   transparency = true,
   statusline = {
     -- theme = "default", -- default/vscode/vscode_colored/minimal
