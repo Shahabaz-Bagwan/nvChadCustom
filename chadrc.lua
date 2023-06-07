@@ -10,6 +10,8 @@ M.base46 = {
 -- Path to overriding theme and highlights files
 local highlights = require "custom.highlights"
 
+M.lazy_nvim = require "custom.configs.lazy_nvim" -- config for lazy.nvim startup options
+
 M.ui = {
   theme = "chadracula",
 
@@ -45,8 +47,7 @@ M.ui = {
 
       text = (current_line == 1 and "Top") or text
       text = (current_line == total_line and "Bot") or text
-
-      local line = string.format("%s/%s", current_line, total_line)
+      local line = string.format(" %s/%s  %s", current_line, total_line, "%#St_pos_Text#%c")
       return {
         cursor_position = function()
           return left_sep .. "%#St_pos_text#" .. " " .. line .. " " .. text .. " "
