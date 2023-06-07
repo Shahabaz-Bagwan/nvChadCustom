@@ -26,7 +26,13 @@ end
 
 lspconfig.clangd.setup {
   on_attach = on_attach,
-  capabilities = capabilities,
+  -- capabilities = capabilities,
+  capabilities = vim.tbl_deep_extend("force", capabilities, {
+    offsetEncoding = { "utf-16" },
+    general = {
+      positionEncodings = { "utf-16" },
+    },
+  }),
   settings = {
     cmd = {
       "clangd",
@@ -74,7 +80,12 @@ lspconfig.rust_analyzer.setup {
   -- options to pass to nvim-lspconfig
   -- i.e. the arguments to require("lspconfig").clangd.setup({})
   on_attach = on_attach,
-  capabilities = capabilities,
+  capabilities = vim.tbl_deep_extend("force", capabilities, {
+    offsetEncoding = { "utf-16" },
+    general = {
+      positionEncodings = { "utf-16" },
+    },
+  }),
   settings = {
     cmd = { "rust-analyzer" },
     ["rust-analyzer"] = {
