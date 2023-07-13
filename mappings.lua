@@ -19,7 +19,22 @@ M.general = {
   },
 }
 
+M.dap = {
+  plugin = true,
+  n = {
+    ["<leader>db"] = {
+      "<cmd> DapToggleBreakpoint <CR>",
+      "Add breakpoint at line",
+    },
+    ["<leader>dr"] = {
+      "<cmd> DapContinue <CR>",
+      "Start or continue the debugger",
+    },
+  },
+}
+
 M.nvimtree = {
+  plugin = true,
   n = {
     -- toggle
     ["<leader>e"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
@@ -30,6 +45,7 @@ M.nvimtree = {
 }
 
 M.cmaketools = {
+  plugin = true,
   n = {
     ["<leader>cg"] = { "<cmd> CMakeGenerate <CR>", "Cmake Generate" },
     ["<leader>cx"] = { "<cmd> CMakeGenerate! <CR>", "Clean and generate" },
@@ -49,6 +65,7 @@ M.cmaketools = {
 }
 
 M.lspconfig = {
+  plugin = true,
   n = {
 
     ["gd"] = { "<cmd>Telescope lsp_definitions<cr>", "Goto Definition" },
@@ -63,6 +80,7 @@ M.lspconfig = {
 }
 
 M.telescope = {
+  plugin = true,
   n = {
     ["<leader>fk"] = {
       "<cmd> Telescope keymaps <CR>",
@@ -76,6 +94,7 @@ M.telescope = {
 }
 
 M.nvterm = {
+  plugin = true,
   t = {
     -- toggle in terminal mode
     ["<leader>i"] = {
