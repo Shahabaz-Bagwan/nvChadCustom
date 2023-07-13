@@ -17,7 +17,9 @@ local sources = {
       return utils.root_has_file { ".clang_format", ".clang-format" }
     end,
   },
-  b.diagnostics.cpplint,
+
+  -- b.diagnostics.cpplint,
+  b.diagnostics.cspell,
 
   --cmake
   b.formatting.cmake_format,

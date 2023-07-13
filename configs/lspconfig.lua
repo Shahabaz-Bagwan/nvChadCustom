@@ -116,7 +116,7 @@ lspconfig.lua_ls.setup {
           indent_style = "space",
           indent_size = "2",
           quote_style = "double",
-          max_line_length = "unset",
+          max_line_length = "80",
         },
       },
     },
