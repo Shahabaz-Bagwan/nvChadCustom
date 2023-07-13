@@ -55,12 +55,10 @@ M.lspconfig = {
     ["gr"] = { "<cmd>Telescope lsp_references<cr>", "References" },
     ["gD"] = { "vim.lsp.buf.declaration", "Goto Declaration" },
     ["gi"] = { "<cmd>Telescope lsp_implementations<cr>", "Goto Implementation" },
+    ["<leader>q"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics (Trouble)" },
+    ["<leader>Q"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics (Trouble)" },
     ["<leader>D"] = { "<cmd>Telescope lsp_type_definitions<cr>", "Goto Type Definition" },
-    ["<leader>ss"] = {
-      "<cmd>Telescope lsp_document_symbols{ symbols = { 'Class', 'Function', \
-      'Method', 'Constructor', 'Interface', 'Module', 'Struct', 'Trait', 'Field', 'Property', }, }",
-      "Goto Symbol",
-    },
+    ["<leader>ss"] = { "<cmd>Telescope lsp_document_symbols <cr>", "Goto Symbol" },
   },
 }
 
@@ -73,6 +71,7 @@ M.telescope = {
     ["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "git commits" },
     ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "git status" },
     ["<leader>gt"] = { "<Nop>" },
+    ["<leader>fr"] = { "<cmd> Telescope resume <CR>", "Resume old search" },
   },
 }
 
