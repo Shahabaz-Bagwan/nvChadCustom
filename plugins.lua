@@ -13,7 +13,6 @@ local plugins = {
     },
     opts = overrides.telescope,
   },
-
   {
     "hrsh7th/nvim-cmp",
     config = function()
@@ -25,15 +24,11 @@ local plugins = {
       require("cmp").setup(opts)
     end,
   },
-
   {
     "echasnovski/mini.indentscope",
     version = false, -- wait till new 0.7.0 release to put it back on semver
     event = { "BufReadPre", "BufNewFile" },
-    opts = {
-      symbol = "│",
-      options = { try_as_border = true },
-    },
+    opts = { symbol = "│", options = { try_as_border = true } },
     init = function()
       vim.api.nvim_create_autocmd("FileType", {
         pattern = { "help", "nvim-tree", "Trouble", "lazy", "mason" },
@@ -46,9 +41,7 @@ local plugins = {
       require("mini.indentscope").setup(opts)
     end,
   },
-
   { "tpope/vim-repeat", event = "VeryLazy" },
-
   {
     "RRethy/vim-illuminate",
     event = { "BufReadPost", "BufNewFile" },
@@ -59,7 +52,10 @@ local plugins = {
       local function map(key, dir, buffer)
         vim.keymap.set("n", key, function()
           require("illuminate")["goto_" .. dir .. "_reference"](false)
-        end, { desc = dir:sub(1, 1):upper() .. dir:sub(2) .. " Reference", buffer = buffer })
+        end, {
+          desc = dir:sub(1, 1):upper() .. dir:sub(2) .. " Reference",
+          buffer = buffer,
+        })
       end
 
       map("]]", "next")
@@ -79,7 +75,6 @@ local plugins = {
       { "[[", desc = "Prev Reference" },
     },
   },
-
   {
     "ggandor/leap.nvim",
     keys = {
@@ -97,7 +92,6 @@ local plugins = {
       vim.keymap.del({ "x", "o" }, "X")
     end,
   },
-
   {
     "ggandor/flit.nvim",
     keys = function()
@@ -109,9 +103,7 @@ local plugins = {
       return ret
     end,
     opts = { labeled_modes = "nx" },
-  },
-
-  -- Override plugin definition options
+  }, -- Override plugin definition options
   {
     "kylechui/nvim-surround", -- Surround
     lazy = false,
@@ -119,7 +111,6 @@ local plugins = {
       require("nvim-surround").setup {}
     end,
   },
-
   {
     "p00f/clangd_extensions.nvim", -- clangd extension, some good stuff
     ft = { "c", "cpp" },
@@ -128,7 +119,6 @@ local plugins = {
     --   require "custom.configs.clangd_extensions"
     -- end,
   },
-
   {
     "simrat39/rust-tools.nvim", -- rust, rust, it's rust!
     ft = { "rust" },
@@ -136,8 +126,12 @@ local plugins = {
     -- config = function()
     --   require "custom.configs.rust_tools"
     -- end,
+  }, -- better diagnostics list and others
+  {
+    "folke/trouble.nvim",
+    cmd = { "TroubleToggle", "Trouble" },
+    opts = { use_diagnostic_signs = true },
   },
-
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -153,34 +147,16 @@ local plugins = {
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
-  },
+  }, -- override plugin configs
+  { "williamboman/mason.nvim", opts = overrides.mason },
 
-  -- override plugin configs
-  {
-    "williamboman/mason.nvim",
-    opts = overrides.mason,
-  },
+  { "nvim-treesitter/nvim-treesitter", opts = overrides.treesitter },
 
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = overrides.treesitter,
-  },
+  { "lewis6991/gitsigns.nvim", opts = overrides.gitsigns },
 
-  {
-    "lewis6991/gitsigns.nvim",
-    opts = overrides.gitsigns,
-  },
+  { "nvim-tree/nvim-tree.lua", opts = overrides.nvimtree },
 
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = overrides.nvimtree,
-  },
-
-  {
-    "Civitasv/cmake-tools.nvim",
-    lazy = false,
-    opts = overrides.cmaketools,
-  },
+  { "Civitasv/cmake-tools.nvim", lazy = false, opts = overrides.cmaketools },
 }
 
 return plugins
