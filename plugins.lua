@@ -1,6 +1,44 @@
 local overrides = require "custom.configs.overrides"
 
 local plugins = {
+  {
+    "rcarriga/nvim-dap-ui",
+    event = "VeryLazy",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function()
+      local dap = require "dap"
+      local dapui = require "dapui"
+      dapui.setup()
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated["dapui_config"] = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited["dapui_config"] = function()
+        dapui.close()
+      end
+    end,
+  },
+
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+    },
+    opts = {
+      handlers = {},
+    },
+  },
+
+  {
+    "mfussenegger/nvim-dap",
+    config = function(_, _)
+      require("core.utils").load_mappings "dap"
+    end,
+  },
 
   {
     "nvim-telescope/telescope.nvim",
@@ -13,6 +51,7 @@ local plugins = {
     },
     opts = overrides.telescope,
   },
+
   {
     "hrsh7th/nvim-cmp",
     config = function()
@@ -24,6 +63,7 @@ local plugins = {
       require("cmp").setup(opts)
     end,
   },
+
   {
     "echasnovski/mini.indentscope",
     version = false, -- wait till new 0.7.0 release to put it back on semver
@@ -41,7 +81,9 @@ local plugins = {
       require("mini.indentscope").setup(opts)
     end,
   },
+
   { "tpope/vim-repeat", event = "VeryLazy" },
+
   {
     "RRethy/vim-illuminate",
     event = { "BufReadPost", "BufNewFile" },
@@ -75,6 +117,7 @@ local plugins = {
       { "[[", desc = "Prev Reference" },
     },
   },
+
   {
     "ggandor/leap.nvim",
     keys = {
@@ -92,6 +135,7 @@ local plugins = {
       vim.keymap.del({ "x", "o" }, "X")
     end,
   },
+
   {
     "ggandor/flit.nvim",
     keys = function()
@@ -104,6 +148,7 @@ local plugins = {
     end,
     opts = { labeled_modes = "nx" },
   }, -- Override plugin definition options
+
   {
     "kylechui/nvim-surround", -- Surround
     lazy = false,
@@ -111,6 +156,7 @@ local plugins = {
       require("nvim-surround").setup {}
     end,
   },
+
   {
     "p00f/clangd_extensions.nvim", -- clangd extension, some good stuff
     ft = { "c", "cpp" },
@@ -119,6 +165,7 @@ local plugins = {
     --   require "custom.configs.clangd_extensions"
     -- end,
   },
+
   {
     "simrat39/rust-tools.nvim", -- rust, rust, it's rust!
     ft = { "rust" },
@@ -127,11 +174,13 @@ local plugins = {
     --   require "custom.configs.rust_tools"
     -- end,
   }, -- better diagnostics list and others
+
   {
     "folke/trouble.nvim",
     cmd = { "TroubleToggle", "Trouble" },
     opts = { use_diagnostic_signs = true },
   },
+
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -148,6 +197,7 @@ local plugins = {
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   }, -- override plugin configs
+
   { "williamboman/mason.nvim", opts = overrides.mason },
 
   { "nvim-treesitter/nvim-treesitter", opts = overrides.treesitter },
@@ -156,7 +206,15 @@ local plugins = {
 
   { "nvim-tree/nvim-tree.lua", opts = overrides.nvimtree },
 
-  { "Civitasv/cmake-tools.nvim", lazy = false, opts = overrides.cmaketools },
+  {
+    "Civitasv/cmake-tools.nvim",
+    keys = { "<leader>c" },
+
+    init = function()
+      require("core.utils").load_mappings "cmaketools"
+    end,
+    opts = overrides.cmaketools,
+  },
 }
 
 return plugins
