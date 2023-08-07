@@ -5,6 +5,8 @@ M.cmaketools = {
   cmake_build_directory = "build",
   cmake_build_directory_prefix = "", -- when cmake_build_directory is "", this option will be activated
   cmake_generate_options = { "-D", "CMAKE_EXPORT_COMPILE_COMMANDS=1" },
+  cmake_soft_link_compile_commands = false, -- this will automatically make a soft link from compile commands file to project root dir
+  cmake_compile_commands_from_lsp = true, -- this will automatically set compile commands file location using lsp, to use it, please set `cmake_soft_link_compile_commands` to false
   cmake_build_options = { "--parallel" },
   cmake_console_size = 10, -- cmake output window height
   cmake_console_position = "belowright", -- "belowright", "aboveleft", ...
