@@ -24,7 +24,7 @@ M.ui = {
     -- -- default/round/block/arrow separators work only for default statusline theme
     -- -- round and block will work for minimal theme only
     -- separator_style = "default",
-    overriden_modules = function()
+    overriden_modules = function(modules)
       local fn = vim.fn
       local config = require("core.utils").load_config().ui.statusline
       local sep_style = config.separator_style
@@ -48,11 +48,9 @@ M.ui = {
       text = (current_line == 1 and "Top") or text
       text = (current_line == total_line and "Bot") or text
       local line = string.format(" %s/%s  %s", current_line, total_line, "%#St_pos_Text#%c")
-      return {
-        cursor_position = function()
-          return left_sep .. "%#St_pos_text#" .. " " .. line .. " " .. text .. " "
-        end,
-      }
+      modules[10] = (function()
+        return left_sep .. "%#St_pos_text#" .. " " .. line .. " " .. text .. " "
+      end)()
     end,
   },
 }
