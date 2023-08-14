@@ -11,6 +11,7 @@ vim.o.spelllang = "en_us,de_de"
 vim.o.foldmethod = "expr"
 vim.o.fixendofline = true
 vim.o.endofline = true
+vim.o.foldcolumn = "1"
 vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 -- vim.opt.foldenable = false
 vim.api.nvim_create_autocmd({ "BufEnter" }, { pattern = { "*" }, command = "normal zx" })
