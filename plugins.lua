@@ -198,19 +198,19 @@ local plugins = {
 	-- 	end,
 	-- },
 
-	{
-		"dstein64/nvim-scrollview",
-		lazy = false,
-		config = function()
-			require("scrollview").setup({
-				excluded_filetypes = { "nvimtree", "terminal" },
-				current_only = true,
-				winblend = 75,
-				signs_on_startup = { "all" },
-				diagnostics_severities = { vim.diagnostic.severity.ERROR },
-			})
-		end,
-	},
+	-- {
+	-- 	"dstein64/nvim-scrollview",
+	-- 	lazy = false,
+	-- 	config = function()
+	-- 		require("scrollview").setup({
+	-- 			excluded_filetypes = { "nvimtree", "terminal" },
+	-- 			current_only = true,
+	-- 			winblend = 75,
+	-- 			signs_on_startup = { "all" },
+	-- 			diagnostics_severities = { vim.diagnostic.severity.ERROR },
+	-- 		})
+	-- 	end,
+	-- },
 
 	{
 		"kylechui/nvim-surround", -- Surround
