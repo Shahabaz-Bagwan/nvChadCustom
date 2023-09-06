@@ -101,7 +101,7 @@ M.telescope = {
 			-- the default case_mode is "smart_case"
 		},
 	},
-	extensions_list = { "fzf" },
+	extensions_list = { "themes", "terms", "fzf" },
 }
 
 M.mason = {
