@@ -7,7 +7,7 @@ local M = {}
 ---@type Base46HLGroupsList
 M.override = {
 	CursorLine = {
-		bg = "#41434f",
+		bg = "#302030",
 	},
 	Comment = {
 		italic = true,
