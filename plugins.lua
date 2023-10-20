@@ -2,6 +2,10 @@ local overrides = require("custom.configs.overrides")
 
 local plugins = {
 	{
+		"christoomey/vim-tmux-navigator",
+		lazy = false,
+	},
+	{
 		"rcarriga/nvim-dap-ui",
 		event = "VeryLazy",
 		dependencies = "mfussenegger/nvim-dap",
