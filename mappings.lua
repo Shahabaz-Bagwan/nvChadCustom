@@ -6,7 +6,7 @@ M.general = {
 		["<leader>sp"] = { "<cmd> set spell! <CR>", "Toggle spell check" },
 		["<leader>wp"] = { "<cmd> set wrap! <CR>", "Toggle line wrap" },
 		["<leader>ww"] = { "<cmd> write <CR>", "Write/Save file" },
-		["<leader>sq"] = { "<cmd> quitall <CR>", "Session quit" },
+		["<leader>qq"] = { "<cmd> quitall <CR>", "Session quit" },
 		["<F3>"] = { "<cmd> set list! <CR>", "Toggle list", opts = { nowait = true } },
 		["<F5>"] = { "<cmd> !python3 % <CR>", "Run python file", opts = { nowait = true } },
 		[";"] = { ":", "Enter cmdline", opts = { nowait = true } },
@@ -15,7 +15,7 @@ M.general = {
 	v = {
 		[";"] = { ":", "Enter cmdline", opts = { nowait = true } },
 		["<leader>ww"] = { "<cmd> write <CR>", "Write/Save file" },
-		["<leader>sq"] = { "<cmd> quitall<CR>", "Session quit" },
+		["<leader>qq"] = { "<cmd> quitall<CR>", "Session quit" },
 	},
 }
 

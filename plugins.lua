@@ -6,6 +6,16 @@ local plugins = {
 		lazy = false,
 	},
 	{
+		"folke/persistence.nvim",
+		event = "BufReadPre",
+		opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp" } },
+    -- stylua: ignore
+    keys = {
+      { "<leader>rs", function() require("persistence").load() end, desc = "Restore Session" },
+      { "<leader>rls", function() require("persistence").load({ last = true }) end, desc = "Restore Last Session" },
+    },
+	},
+	{
 		"rcarriga/nvim-dap-ui",
 		event = "VeryLazy",
 		dependencies = "mfussenegger/nvim-dap",
