@@ -218,7 +218,7 @@ local plugins = {
 
 	{ "lewis6991/gitsigns.nvim", opts = overrides.gitsigns },
 
-	{ "nvim-tree/nvim-tree.lua", keys = { "<leader>e" }, opts = overrides.nvimtree },
+	{ "nvim-tree/nvim-tree.lua", lazy = false, opts = overrides.nvimtree },
 
 	{
 		"Civitasv/cmake-tools.nvim",
