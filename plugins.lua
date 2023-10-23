@@ -163,69 +163,6 @@ local plugins = {
 		opts = { labeled_modes = "nx" },
 	}, -- Override plugin definition options
 
-	-- {
-	-- 	"petertriho/nvim-scrollbar",
-	-- 	lazy = false,
-	-- 	config = function()
-	-- 		require("scrollbar").setup({
-	-- 			throttle_ms = 1,
-	-- 			excluded_buftypes = {
-	-- 				"terminal",
-	-- 			},
-	-- 			excluded_filetypes = {
-	-- 				"nvimtree",
-	-- 				"cmp_docs",
-	-- 				"cmp_menu",
-	-- 				"noice",
-	-- 				"prompt",
-	-- 				"TelescopePrompt",
-	-- 			},
-	-- 			marks = {
-	-- 				GitAdd = {
-	-- 					text = "┆",
-	-- 					priority = 7,
-	-- 					gui = nil,
-	-- 					color = "#00ff11",
-	-- 					cterm = nil,
-	-- 					color_nr = nil, -- cterm
-	-- 					highlight = "GitSignsAdd",
-	-- 				},
-	-- 				GitDelete = {
-	-- 					text = "▁",
-	-- 					priority = 7,
-	-- 					gui = nil,
-	-- 					color = "#ff0000",
-	-- 					cterm = nil,
-	-- 					color_nr = nil, -- cterm
-	-- 					highlight = "GitSignsDelete",
-	-- 				},
-	-- 			},
-	-- 			handlers = {
-	-- 				cursor = true,
-	-- 				diagnostic = true,
-	-- 				gitsigns = true, -- Requires gitsigns
-	-- 				handle = true,
-	-- 				search = false, -- Requires hlslens
-	-- 				ale = false, -- Requires ALE
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
-
-	-- {
-	-- 	"dstein64/nvim-scrollview",
-	-- 	lazy = false,
-	-- 	config = function()
-	-- 		require("scrollview").setup({
-	-- 			excluded_filetypes = { "nvimtree", "terminal" },
-	-- 			current_only = true,
-	-- 			winblend = 75,
-	-- 			signs_on_startup = { "all" },
-	-- 			diagnostics_severities = { vim.diagnostic.severity.ERROR },
-	-- 		})
-	-- 	end,
-	-- },
-
 	{
 		"kylechui/nvim-surround", -- Surround
 		lazy = false,
@@ -281,7 +218,7 @@ local plugins = {
 
 	{ "lewis6991/gitsigns.nvim", opts = overrides.gitsigns },
 
-	{ "nvim-tree/nvim-tree.lua", opts = overrides.nvimtree },
+	{ "nvim-tree/nvim-tree.lua", keys = { "<leader>e" }, opts = overrides.nvimtree },
 
 	{
 		"Civitasv/cmake-tools.nvim",
