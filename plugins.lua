@@ -6,6 +6,10 @@ local plugins = {
 		lazy = false,
 	},
 	{
+		"nvim-treesitter/nvim-treesitter-context",
+		event = "VeryLazy",
+	},
+	{
 		"folke/persistence.nvim",
 		event = "BufReadPre",
 		opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp" } },

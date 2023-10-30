@@ -13,6 +13,8 @@ M.general = {
 		["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights", opts = { silent = true } },
 	},
 	v = {
+		["J"] = { ":m '>+1<CR>gv=gv", "Shift visual selected line down" },
+		["K"] = { ":m '<-2<CR>gv=gv", "Shift visual selected line up" },
 		[";"] = { ":", "Enter cmdline", opts = { nowait = true } },
 		["<leader>ww"] = { "<cmd> write <CR>", "Write/Save file" },
 		["<leader>qq"] = { "<cmd> quitall<CR>", "Session quit" },
