@@ -2,6 +2,17 @@ local overrides = require("custom.configs.overrides")
 
 local plugins = {
 	{
+		"kdheepak/lazygit.nvim",
+		-- optional for floating window border decoration
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		event = "VeryLazy",
+		init = function()
+			require("core.utils").load_mappings("lazygit")
+		end,
+	},
+	{
 		"christoomey/vim-tmux-navigator",
 		lazy = false,
 	},

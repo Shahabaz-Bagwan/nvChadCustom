@@ -81,6 +81,13 @@ M.lspconfig = {
 	},
 }
 
+M.lazygit = {
+	plugin = true,
+	n = {
+		["<leader>lg"] = { "<cmd> LazyGit <CR>", "open lazygit" },
+	},
+}
+
 M.telescope = {
 	plugin = true,
 	n = {
