@@ -88,6 +88,17 @@ M.lazygit = {
 	},
 }
 
+M.nvterm = {
+	plugin = true,
+
+	n = {
+
+		-- new
+		["<leader>h"] = { "<Nop>" },
+
+		["<leader>v"] = { "<Nop>" },
+	},
+}
 M.telescope = {
 	plugin = true,
 	n = {
