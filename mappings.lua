@@ -79,6 +79,13 @@ M.lspconfig = {
 		["<leader>D"] = { "<cmd>Telescope lsp_type_definitions<cr>", "Goto Type Definition" },
 		["<leader>ss"] = { "<cmd>Telescope lsp_document_symbols <cr>", "Goto Symbol" },
 	},
+    ["<leader>lf"] = { "<NOP>" },
+    ["<leader>f"] = {
+      function()
+        vim.diagnostic.open_float({ border = "rounded" })
+      end,
+      "Floating diagnostic",
+    },
 }
 
 M.lazygit = {
