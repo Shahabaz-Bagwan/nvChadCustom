@@ -88,6 +88,13 @@ M.lspconfig = {
   },
 }
 
+M.lazydocker = {
+  plugin = true,
+  n = {
+    ["<leader>ld"] = { "<cmd> LazyDocker <CR>", "open lazygit" },
+  },
+}
+
 M.lazygit = {
   plugin = true,
   n = {
