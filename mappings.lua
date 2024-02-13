@@ -11,6 +11,7 @@ M.general = {
     ["<F5>"] = { "<cmd> !python3 % <CR>", "Run python file", opts = { nowait = true } },
     [";"] = { ":", "Enter cmdline", opts = { nowait = true } },
     ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights", opts = { silent = true } },
+    ["<leader>rp"] = { ":%s/<<C-r><C-w>>//gc<Left><Left><Left>", "Replace word under cursor" },
   },
   v = {
     ["J"] = { ":m '>+1<CR>gv=gv", "Shift visual selected line down" },
