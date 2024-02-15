@@ -7,11 +7,12 @@ M.general = {
     ["<leader>wp"] = { "<cmd> set wrap! <CR>", "Toggle line wrap" },
     ["<leader>ww"] = { "<cmd> write <CR>", "Write/Save file" },
     ["<leader>qq"] = { "<cmd> quitall <CR>", "Session quit" },
+    ["gf"] = { "<C-W>vgf", "open file under cursor in vsplit" },
     ["<F3>"] = { "<cmd> set list! <CR>", "Toggle list", opts = { nowait = true } },
     ["<F5>"] = { "<cmd> !python3 % <CR>", "Run python file", opts = { nowait = true } },
     [";"] = { ":", "Enter cmdline", opts = { nowait = true } },
     ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights", opts = { silent = true } },
-    ["<leader>rp"] = { ":%s/<<C-r><C-w>>//gc<Left><Left><Left>", "Replace word under cursor" },
+    ["<leader>rp"] = { ":%s/<C-r><C-w>//gc<Left><Left><Left>", "Replace word under cursor" },
   },
   v = {
     ["J"] = { ":m '>+1<CR>gv=gv", "Shift visual selected line down" },
