@@ -65,7 +65,8 @@ M.cmaketools = {
     ["<leader>ccr"] = { "<cmd> CMakeCloseRunner <CR>", "Close CMake Runner Console" },
     ["<leader>ci"] = { "<cmd> CMakeInstall <CR>", "Intall CMake target" },
     ["<leader>cn"] = { "<cmd> CMakeClean <CR>", "Clean CMake target" },
-    ["<leader>cs"] = { "<cmd> CMakeStop <CR>", "Stop CMake Process" },
+    ["<leader>cse"] = { "<cmd> CMakeStopExecutor <CR>", "Stop CMake Executor" },
+    ["<leader>csr"] = { "<cmd> CMakeStopRunner <CR>", "Stop CMake Runner" },
     ["<leader>cp"] = { "<cmd> cd %:p:h <CR> ", "Change pwd to current file" },
   },
 }
