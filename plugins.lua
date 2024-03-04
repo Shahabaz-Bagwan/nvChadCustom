@@ -218,6 +218,10 @@ local plugins = {
   { "nvim-tree/nvim-tree.lua",         lazy = false,               opts = overrides.nvimtree },
 
   {
+    "NvChad/nvterm",
+    enabled = false,
+  },
+  {
     "Civitasv/cmake-tools.nvim",
     keys = { "<leader>c" },
 

@@ -4,6 +4,7 @@ M.general = {
   n = {
     ["<leader>ft"] = { "<cmd> %s/</\r</g <CR> <bar> gg=G", "Format xml" },
     ["<leader>sp"] = { "<cmd> set spell! <CR>", "Toggle spell check" },
+    ["<leader>pt"] = { "<NOP>" },
     ["<leader>wp"] = { "<cmd> set wrap! <CR>", "Toggle line wrap" },
     ["<leader>ww"] = { "<cmd> write <CR>", "Write/Save file" },
     ["<leader>qq"] = { "<cmd> quitall <CR>", "Session quit" },
@@ -37,16 +38,16 @@ M.dap = {
   },
 }
 
-M.nvimtree = {
-  plugin = true,
-  n = {
-    -- toggle
-    ["<leader>e"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
-
-    -- focus
-    ["<C-n>"] = { "<cmd> NvimTreeFocus <CR>", "focus nvimtree" },
-  },
-}
+-- M.nvimtree = {
+--   plugin = true,
+--   n = {
+--     -- toggle
+--     ["<leader>e"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
+--
+--     -- focus
+--     ["<C-n>"] = { "<cmd> NvimTreeFocus <CR>", "focus nvimtree" },
+--   },
+-- }
 
 M.cmaketools = {
   plugin = true,
