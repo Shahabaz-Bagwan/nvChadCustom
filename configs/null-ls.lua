@@ -19,7 +19,6 @@ local sources = {
   }),
 
   -- b.diagnostics.cpplint,
-  b.diagnostics.cspell,
 
   --cmake
   b.formatting.cmake_format,
