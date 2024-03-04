@@ -89,7 +89,7 @@ M.lspconfig = {
     ["<leader>q"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics (Trouble)" },
     ["<leader>Q"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics (Trouble)" },
     ["<leader>D"] = { "<cmd>Telescope lsp_type_definitions<cr>", "Goto Type Definition" },
-    ["<leader>ss"] = { "<cmd>Telescope lsp_document_symbols <cr>", "Goto Symbol" },
+    ["<leader>fs"] = { "<cmd>Telescope lsp_document_symbols ignore_symbols=variable <cr>", "Goto Symbol" },
   },
 }
 
