@@ -38,16 +38,16 @@ M.dap = {
   },
 }
 
--- M.nvimtree = {
---   plugin = true,
---   n = {
---     -- toggle
---     ["<leader>e"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
---
---     -- focus
---     ["<C-n>"] = { "<cmd> NvimTreeFocus <CR>", "focus nvimtree" },
---   },
--- }
+M.nvimtree = {
+  plugin = true,
+  n = {
+    -- toggle
+    ["<leader>e"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
+
+    -- focus
+    ["<C-n>"] = { "<cmd> NvimTreeFocus <CR>", "focus nvimtree" },
+  },
+}
 
 M.cmaketools = {
   plugin = true,
@@ -108,17 +108,17 @@ M.lazygit = {
   },
 }
 
-M.nvterm = {
-  plugin = true,
-
-  n = {
-
-    -- new
-    ["<leader>h"] = { "<Nop>" },
-
-    ["<leader>v"] = { "<Nop>" },
-  },
-}
+-- M.nvterm = {
+--   plugin = true,
+--
+--   n = {
+--
+--     -- new
+--     ["<leader>h"] = { "<Nop>" },
+--
+--     ["<leader>v"] = { "<Nop>" },
+--   },
+-- }
 M.telescope = {
   plugin = true,
   n = {
