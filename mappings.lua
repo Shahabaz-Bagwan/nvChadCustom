@@ -3,6 +3,7 @@ local M = {}
 M.general = {
   n = {
     ["<leader>ft"] = { "<cmd> %s/</\r</g <CR> <bar> gg=G", "Format xml" },
+    ["<leader>xa"] = { "<cmd> %bd <bar> e# <bar> bd# <bar> '\" <CR>", "Close all buffer but current" },
     ["<leader>sp"] = { "<cmd> set spell! <CR>", "Toggle spell check" },
     ["<leader>pt"] = { "<NOP>" },
     ["<leader>wp"] = { "<cmd> set wrap! <CR>", "Toggle line wrap" },
