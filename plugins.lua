@@ -69,6 +69,9 @@ local plugins = {
       end
     end,
   },
+  {
+    "theHamsta/nvim-dap-virtual-text",
+  },
 
   {
     "jay-babu/mason-nvim-dap.nvim",
@@ -86,6 +89,7 @@ local plugins = {
     "mfussenegger/nvim-dap",
     config = function(_, _)
       require("core.utils").load_mappings("dap")
+      require("custom.configs.dap")
     end,
   },
 
