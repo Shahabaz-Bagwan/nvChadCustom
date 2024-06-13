@@ -25,17 +25,21 @@ dap.configurations.cpp = {
     program = function()
       return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
     end,
-    cwd = "${workspaceFolder}",
+    cwd = function()
+      return vim.fn.input("WorkingDir: ", vim.fn.getcwd() .. "/", "dir")
+    end,
     stopOnEntry = false,
   },
   {
-    name = "Launch",
+    name = "Launch gdb",
     type = "gdb",
     request = "launch",
     program = function()
       return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
     end,
-    cwd = "${workspaceFolder}",
+    cwd = function()
+      return vim.fn.input("WorkingDir: ", vim.fn.getcwd() .. "/", "dir")
+    end,
     stopAtBeginningOfMainSubprogram = false,
   },
   {

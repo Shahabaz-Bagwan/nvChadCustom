@@ -53,7 +53,7 @@ local plugins = {
   {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",
-    dependencies = "mfussenegger/nvim-dap",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
     config = function()
       local dap = require("dap")
       local dapui = require("dapui")
@@ -71,6 +71,27 @@ local plugins = {
   },
   {
     "theHamsta/nvim-dap-virtual-text",
+  },
+  {
+    "nvim-dap-repl-highlights",
+  },
+  {
+    "rcarriga/cmp-dap",
+    config = function()
+      require("cmp").setup({
+        enabled = function()
+          return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or
+          require("cmp_dap").is_dap_buffer()
+        end,
+      })
+
+      require("cmp").setup.filetype(
+      { "dap-repl", "dapui_watches", "dapui_hover" }, {
+        sources = {
+          { name = "dap" },
+        },
+      })
+    end,
   },
 
   {
@@ -95,6 +116,12 @@ local plugins = {
 
   {
     "nvim-telescope/telescope.nvim",
+    dependencies = {
+      {
+        "HUAHUAI23/telescope-dapzzzz",
+        lazy = false,
+      },
+    },
     opts = overrides.telescope,
   },
 

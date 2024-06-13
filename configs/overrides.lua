@@ -94,7 +94,7 @@ M.nvimtree = {
 
 M.telescope = {
   extensions = {},
-  extensions_list = { "themes", "terms" },
+  extensions_list = { "themes", "terms", "i23" },
 }
 
 M.mason = {
