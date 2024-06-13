@@ -5,131 +5,132 @@ local lspconfig = require("lspconfig")
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
-	"clangd",
-	"lua_ls",
-	"grammarly",
-	"dockerls",
-	"texlab",
-	"pyright",
-	"ltex",
-	"jsonls",
-	"cmake",
-	"rust_analyzer",
+  "clangd",
+  "lua_ls",
+  "grammarly",
+  "dockerls",
+  "texlab",
+  "pyright",
+  "ltex",
+  "jsonls",
+  "cmake",
+  "rust_analyzer",
+  "gopls",
 }
 
 for _, lsp in ipairs(servers) do
-	lspconfig[lsp].setup({
-		on_attach = on_attach,
-		capabilities = capabilities,
-	})
+  lspconfig[lsp].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+  })
 end
 
 lspconfig.jsonls.setup({
-	settings = {
-		cmd = { "vscode-json-language-server", "--stdio" },
-		filetypes = { "json", "jsonc" },
-		init_options = {
-			provideFormatter = true,
-		},
-		single_file_support = true,
-	},
+  settings = {
+    cmd = { "vscode-json-language-server", "--stdio" },
+    filetypes = { "json", "jsonc" },
+    init_options = {
+      provideFormatter = true,
+    },
+    single_file_support = true,
+  },
 })
 
 lspconfig.clangd.setup({
-	on_attach = on_attach,
-	-- capabilities = capabilities,
-	capabilities = vim.tbl_deep_extend("force", capabilities, {
-		offsetEncoding = { "utf-16" },
-		general = {
-			positionEncodings = { "utf-16" },
-		},
-	}),
-	settings = {
-		cmd = {
-			"clangd",
-			"--background-index",
-			"--clang-tidy",
-			"--suggest-missing-includes",
-			"--completion-style=bundled",
-			"--cross-file-rename",
-			"--header-insertion=iwyu",
-		},
-		root_dir = {
-			root_pattern = {
-				".clangd",
-				".clang-tidy",
-				".clang-format",
-				"compile_commands.json",
-				"compile_flags.txt",
-				"configure.ac",
-				".git",
-			},
-		},
+  on_attach = on_attach,
+  -- capabilities = capabilities,
+  capabilities = vim.tbl_deep_extend("force", capabilities, {
+    offsetEncoding = { "utf-16" },
+    general = {
+      positionEncodings = { "utf-16" },
+    },
+  }),
+  settings = {
+    cmd = {
+      "clangd",
+      "--background-index",
+      "--clang-tidy",
+      "--suggest-missing-includes",
+      "--completion-style=bundled",
+      "--cross-file-rename",
+      "--header-insertion=iwyu",
+    },
+    root_dir = {
+      root_pattern = {
+        ".clangd",
+        ".clang-tidy",
+        ".clang-format",
+        "compile_commands.json",
+        "compile_flags.txt",
+        "configure.ac",
+        ".git",
+      },
+    },
 
-		filetypes = {
-			"c",
-			"cpp",
-			"objc",
-			"objcpp",
-			"cuda",
-			"proto",
-		},
-		single_file_support = true,
-		init_options = {
-			usePlaceholders = true,
-			completeUnimported = true,
-			clangdFileStatus = true,
-		},
-		flags = { debounce_text_changes = 150 },
-	},
+    filetypes = {
+      "c",
+      "cpp",
+      "objc",
+      "objcpp",
+      "cuda",
+      "proto",
+    },
+    single_file_support = true,
+    init_options = {
+      usePlaceholders = true,
+      completeUnimported = true,
+      clangdFileStatus = true,
+    },
+    flags = { debounce_text_changes = 150 },
+  },
 })
 
 lspconfig.rust_analyzer.setup({
-	-- standalone file support
-	-- setting it to false may improve startup time
-	standalone = true,
-	-- options to pass to nvim-lspconfig
-	-- i.e. the arguments to require("lspconfig").clangd.setup({})
-	on_attach = on_attach,
-	capabilities = vim.tbl_deep_extend("force", capabilities, {
-		offsetEncoding = { "utf-16" },
-		general = {
-			positionEncodings = { "utf-16" },
-		},
-	}),
-	settings = {
-		cmd = { "rust-analyzer" },
-		["rust-analyzer"] = {
-			cargo = {
-				autoReload = true,
-			},
-		},
-		filetypes = { "rust" },
-		root_dir = {
-			root_pattern = {
-				"Cargo.toml",
-				"rust-project.json",
-			},
-		},
-	},
+  -- standalone file support
+  -- setting it to false may improve startup time
+  standalone = true,
+  -- options to pass to nvim-lspconfig
+  -- i.e. the arguments to require("lspconfig").clangd.setup({})
+  on_attach = on_attach,
+  capabilities = vim.tbl_deep_extend("force", capabilities, {
+    offsetEncoding = { "utf-16" },
+    general = {
+      positionEncodings = { "utf-16" },
+    },
+  }),
+  settings = {
+    cmd = { "rust-analyzer" },
+    ["rust-analyzer"] = {
+      cargo = {
+        autoReload = true,
+      },
+    },
+    filetypes = { "rust" },
+    root_dir = {
+      root_pattern = {
+        "Cargo.toml",
+        "rust-project.json",
+      },
+    },
+  },
 })
 
 lspconfig.lua_ls.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
+  on_attach = on_attach,
+  capabilities = capabilities,
 
-	settings = {
-		Lua = {
-			format = {
-				enable = true,
-				-- Put format options here
-				defaultConfig = {
-					indent_style = "space",
-					indent_size = "2",
-					quote_style = "double",
-					max_line_length = "80",
-				},
-			},
-		},
-	},
+  settings = {
+    Lua = {
+      format = {
+        enable = true,
+        -- Put format options here
+        defaultConfig = {
+          indent_style = "space",
+          indent_size = "2",
+          quote_style = "double",
+          max_line_length = "80",
+        },
+      },
+    },
+  },
 })
