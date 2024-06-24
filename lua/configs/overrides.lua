@@ -1,45 +1,5 @@
 local M = {}
 
-M.cmaketools = {
-  cmake_command = "cmake",
-  cmake_build_directory = "build",
-  cmake_build_directory_prefix = "",                                                -- when cmake_build_directory is "", this option will be activated
-  cmake_generate_options = { "-D", "CMAKE_EXPORT_COMPILE_COMMANDS=1" },
-  cmake_soft_link_compile_commands = false,                                         -- this will automatically make a soft link from compile commands file to project root dir
-  cmake_compile_commands_from_lsp = true,                                           -- this will automatically set compile commands file location using lsp, to use it, please set `cmake_soft_link_compile_commands` to false
-  cmake_build_options = { "--parallel" },
-  cmake_console_size = 10,                                                          -- cmake output window height
-  cmake_console_position = "belowright",                                            -- "belowright", "aboveleft", ...
-  cmake_show_console = "always",                                                    -- "always", "only_on_error"
-  cmake_dap_configuration = { name = "cpp", type = "codelldb", request = "launch" }, -- dap configuration, optional
-  cmake_variants_message = {
-    short = { show = true },
-    long = { show = true, max_length = 40 },
-  },
-}
-
-M.treesitter = {
-  ensure_installed = {
-    "vimdoc",
-    "lua",
-    "cpp",
-    "c",
-    "rust",
-    "vim",
-    "python",
-    "markdown",
-    "bash",
-    "markdown_inline",
-    "jsonc",
-  },
-  indent = {
-    enable = true,
-    disable = {
-      "python",
-    },
-  },
-}
-
 M.gitsigns = {
   signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
   numhl = false,    -- Toggle with `:Gitsigns toggle_numhl`
