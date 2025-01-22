@@ -25,20 +25,6 @@ M.general = {
   },
 }
 
-M.dap = {
-  plugin = true,
-  n = {
-    ["<leader>db"] = {
-      "<cmd> DapToggleBreakpoint <CR>",
-      "Add breakpoint at line",
-    },
-    ["<leader>dr"] = {
-      "<cmd> DapContinue <CR>",
-      "Start or continue the debugger",
-    },
-  },
-}
-
 M.nvimtree = {
   plugin = true,
   n = {
@@ -47,29 +33,6 @@ M.nvimtree = {
 
     -- focus
     ["<C-n>"] = { "<cmd> NvimTreeFocus <CR>", "focus nvimtree" },
-  },
-}
-
-M.cmaketools = {
-  plugin = true,
-  n = {
-    ["<leader>cg"] = { "<cmd> CMakeGenerate <CR>", "Cmake Generate" },
-    ["<leader>cx"] = { "<cmd> CMakeGenerate! <CR>", "Clean and generate" },
-    ["<leader>cb"] = { "<cmd> CMakeBuild <CR>", "Cmake Build" },
-    ["<leader>cr"] = { "<cmd> CMakeRun <CR>", "cmake Run" },
-    ["<leader>cd"] = { "<cmd> CMakeDebug <CR>", "cmake Debug" },
-    ["<leader>cy"] = { "<cmd> CMakeSelectBuildType <CR>", "Select Build Type" },
-    ["<leader>ct"] = { "<cmd> CMakeSelectBuildTarget <CR>", "Select Build Target" },
-    ["<leader>cl"] = { "<cmd> CMakeSelectLaunchTarget <CR>", "Select Launch Target" },
-    ["<leader>coe"] = { "<cmd> CMakeOpenExecutor <CR>", "Open CMake Executor Console" },
-    ["<leader>cor"] = { "<cmd> CMakeOpenRunner <CR>", "Open CMake Runner Console" },
-    ["<leader>cce"] = { "<cmd> CMakeCloseExecutor <CR>", "Close CMake Executor Console" },
-    ["<leader>ccr"] = { "<cmd> CMakeCloseRunner <CR>", "Close CMake Runner Console" },
-    ["<leader>ci"] = { "<cmd> CMakeInstall <CR>", "Intall CMake target" },
-    ["<leader>cn"] = { "<cmd> CMakeClean <CR>", "Clean CMake target" },
-    ["<leader>cse"] = { "<cmd> CMakeStopExecutor <CR>", "Stop CMake Executor" },
-    ["<leader>csr"] = { "<cmd> CMakeStopRunner <CR>", "Stop CMake Runner" },
-    ["<leader>cp"] = { "<cmd> cd %:p:h <CR> ", "Change pwd to current file" },
   },
 }
 
@@ -95,13 +58,6 @@ M.lspconfig = {
   },
 }
 
-M.lazydocker = {
-  plugin = true,
-  n = {
-    ["<leader>ld"] = { "<cmd> LazyDocker <CR>", "open lazygit" },
-  },
-}
-
 M.lazygit = {
   plugin = true,
   n = {
@@ -109,17 +65,6 @@ M.lazygit = {
   },
 }
 
--- M.nvterm = {
---   plugin = true,
---
---   n = {
---
---     -- new
---     ["<leader>h"] = { "<Nop>" },
---
---     ["<leader>v"] = { "<Nop>" },
---   },
--- }
 M.telescope = {
   plugin = true,
   n = {
